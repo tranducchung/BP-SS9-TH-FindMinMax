@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VHTM</title>
+</head>
+<body>
+<script>
+    let number = [];
+    for (let i = 0; i < 100; i++) {
+        number[i] = Math.round(Math.random() * 500);
+    }
+    let min = number[0];
+    for (let j = 1; j < number.length; j++) {
+        if (number[j] < min) {
+            min = number[j]
+        }
+    }
+    let max = number[0];
+    for (let n = 0; n < number.length; n++) {
+        if (number[n] > max) {
+            max = number[n]
+        }
+    }
+    let data = "";
+    for (let m = 0; m < number.length; m++) {
+        if (m % 10 === 9 && m !== 0) {
+            data += (number[m] + "<br>")
+        } else {
+            data += (number[m] + "...")
+        }
+    }
+    document.write(data);
+    document.write("Giá trị " + min + " là bé nhất trong mảng " + "<br>");
+    document.write("Giá trị " + max + "là lớn nhất trong mảng " + "<br>");
+</script>
+</body>
+</html>
